@@ -1,0 +1,12 @@
+{
+  "apps" : [
+    {
+      "name": "jonkofee-profile-server",
+      "script": "./server.js",
+      "wait_ready": true,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
