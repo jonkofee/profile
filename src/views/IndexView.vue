@@ -1,7 +1,29 @@
 <template>
   <div>
     <h1>jonkofee</h1>
-    <div class="starline" aria-hidden="true">★</div>
+    <div class="logo_wrapper">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 98 104">
+        <defs>
+          <path id="sub_logo" d="M0.3,16.7 c01,0,0.4,7.7,24,31.3 l-7.8,17 l20.9-6.1 l11.1,29.2 l12.1-30.7 h27.9 c0,0-11.2-14.7-36.9-20.9 C25.9,30.4,11.9,26.7,0.3,16.7" />
+
+          <path id="header" d="M55,0 H6 c7,7,14,15,46,25" />
+        </defs>
+
+        <g class="header" transform="translate(-3, 2)">
+          <use xlink:href="#header" />
+          <use xlink:href="#header" transform="scale(-1, 1)" x="-104" />
+        </g>
+
+        <g class="head">
+          <use xlink:href="#sub_logo" />
+          <use xlink:href="#sub_logo" transform="scale(-1, 1)" x="-97.2" />
+        </g>
+
+        <path class="clothing" d="M6.1,102 v-13.5 l26.4,-18 l15.5,30 l15.5,-30 l26.4,18 v13.5"></path>
+      </svg>
+      </div>
+    </div>
     <p class="subline" itemprop="jobTitle">
       <span class="subline__text-item fadeUp fadeUp1">Backend Developer</span>
       <span class="subline__dash-item fadeUp fadeUp2">—</span>
@@ -276,56 +298,6 @@
     }
   }
 
-  .starline,
-  .starline:after,
-  .starline:before {
-    will-change: transform;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
-  }
-
-  .starline {
-    color: #111;
-    font-size: 40px;
-    margin: 0 auto 35px;
-    font-weight: 700;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-backface-visibility: none;
-    backface-visibility: none;
-    position: relative;
-    height: 40px;
-    width: 40px;
-    -webkit-animation: bounceIn .7s cubic-bezier(.01, 1.09, .52, 1.27) 1s both;
-    animation: bounceIn .7s cubic-bezier(.01, 1.09, .52, 1.27) 1s both
-  }
-
-  .starline:after,
-  .starline:before {
-    content: "";
-    width: 280px;
-    border-top: 5px solid #111;
-    height: 5px;
-    position: absolute;
-    top: 20px;
-    -webkit-animation: widen 3s cubic-bezier(.22, .61, .36, 1) 1.5s both;
-    animation: widen 3s cubic-bezier(.22, .61, .36, 1) 1.5s both
-  }
-
-  .starline:before {
-    -webkit-transform-origin: 100% 0;
-    transform-origin: 100% 0;
-    right: 60px
-  }
-
-  .starline:after {
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    left: 60px
-  }
-
   .subline {
     font-size: 28px;
     letter-spacing: 1px;
@@ -385,4 +357,37 @@
   .social-list:hover .social-list__link:hover:before {
     display: inherit
   }
+
+.logo
+    height: 50px
+    width: 50px
+    margin: 0 auto 35px
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    position: relative
+
+.logo:after,
+  .logo:before {
+    content: "";
+    width: 280px;
+    border-top: 5px solid #111;
+    height: 5px;
+    position: absolute;
+    top: 20px;
+    -webkit-animation: widen 3s cubic-bezier(.22, .61, .36, 1) 1.5s both;
+    animation: widen 3s cubic-bezier(.22, .61, .36, 1) 1.5s both
+  }
+  .logo:before {
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    right: 60px
+  }
+  .logo:after {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    left: 60px
+  }
+
 </style>
