@@ -75,6 +75,14 @@
 </script>
 
 <style lang="stylus">
+  h1
+    letter-spacing: 10px
+    font-size: 60px
+    text-transform: uppercase
+    margin: 0 0 10px
+    font-weight: 700
+    text-shadow: 3px 3px 0 rgba(0,0,0,.4)
+
   .fadeUp {
     opacity: 0;
     display: inline-block;
