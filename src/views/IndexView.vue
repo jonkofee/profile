@@ -350,7 +350,14 @@
     will-change: transform;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0)
+    margin: 5px
   }
+
+  .social-list__link:focus, .social-list__link:hover {
+    background-color: rgba(0, 0, 0, .4);
+    outline: 0;
+    text-decoration: none
+}
 
   .social-list__icon {
     width: 25px
