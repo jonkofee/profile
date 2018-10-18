@@ -20,7 +20,7 @@
           <path id="header" d="M55,0 H6 c7,7,14,15,46,25" />
         </defs>
 
-        <g class="header" transform="translate(-3, 2)">
+        <g class="header" transform="translate(-3, 2)" fill="blue">
           <use xlink:href="#header" />
           <use xlink:href="#header" transform="scale(-1, 1)" x="-104" />
         </g>
@@ -30,7 +30,7 @@
           <use xlink:href="#sub_logo" transform="scale(-1, 1)" x="-97.2" />
         </g>
 
-        <path class="clothing" d="M6.1,102 v-13.5 l26.4,-18 l15.5,30 l15.5,-30 l26.4,18 v13.5"></path>
+        <path class="clothing" d="M6.1,102 v-13.5 l26.4,-18 l15.5,30 l15.5,-30 l26.4,18 v13.5" fill="red"></path>
       </svg>
       </div>
     </div>
@@ -85,7 +85,7 @@
 <style lang="stylus">
   h1
     letter-spacing: 10px
-    font-size: 60px
+    font-size: 1.5em
     text-transform: uppercase
     margin: 0 0 10px
     font-weight: 700
@@ -394,7 +394,7 @@
 .logo:after,
   .logo:before {
     content: "";
-    width: 280px;
+    width: 7em;
     border-top: 5px solid #111;
     height: 5px;
     position: absolute;
