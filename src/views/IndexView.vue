@@ -26,8 +26,6 @@
     </div>
     <p class="subline" itemprop="jobTitle">
       <span class="subline__text-item fadeUp fadeUp1">Backend Developer</span>
-      <span class="subline__dash-item fadeUp fadeUp2">—</span>
-      <span class="subline__text-item fadeUp fadeUp3">DevOps</span>
     </p>
     <ul class="social-list" aria-label="Find me on other platforms:">
       <li class="social-list__item">
