@@ -87,16 +87,16 @@ body {
     background-attachment: fixed;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")
 
+    @media (max-width: 415px) {
+      font-size 32px
+    }
+
     @media (max-width: 376px) {
       font-size 28px
     }
 
     @media (max-width: 321px) {
       font-size 24px
-    }
-
-    @media (max-width: 415px) {
-      font-size 32px
     }
 }
 
