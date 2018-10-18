@@ -9,7 +9,8 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/', component: () => import('../views/IndexView.vue') }
+      { path: '/', component: () => import('../views/IndexView.vue') },
+      { path: '/test', component: () => import('../views/IndexView.vue') }
     ]
   })
 }
