@@ -65,7 +65,6 @@ const serve = (path, cache) => express.static(resolve(path), {
 
 app.use(compression({ threshold: 0 }))
 app.use('/dist', serve('./dist', true))
-app.use('/public', serve('./public', true))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
 
 // since this app has no user-specific content, every page is micro-cacheable.
