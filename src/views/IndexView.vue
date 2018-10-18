@@ -1,6 +1,16 @@
 <template>
-  <div>
-    <h1>jonkofee</h1>
+  <div itemscope="" itemtype="//schema.org/Person">
+    <div hidden>
+      <meta itemprop="familyName" content="Прищенко"/>
+      <meta itemprop="name" content="Сергей"/>
+      <meta itemprop="additionalName" content="Витальевич"/>
+      <meta itemprop="birthDate" content="1995-15-04"/>
+      <meta itemprop="gender" content="male"/>
+      <meta itemprop="nationality" content="Украина"/>
+      <span itemprop="birthPlace">Амвросиевка, Украина</span>
+      <meta itemprop="email" content="jonkofee@icloud.com"/>
+    </div>
+    <h1 itemprop="alternateName">jonkofee</h1>
     <div class="logo_wrapper">
       <div class="logo">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 98 104">
