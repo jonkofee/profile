@@ -7,6 +7,8 @@
 </template>
 
 <style lang="stylus">
+@import '../node_modules/normalize.css/normalize.css';
+
 @-webkit-keyframes cheesy-colors-bg {
     0%, to {
         background-color: #1b9db4
