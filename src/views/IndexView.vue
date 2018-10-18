@@ -96,18 +96,18 @@
   }
 
   .fadeUp1 {
-    -webkit-animation-delay: 2.7s;
-    animation-delay: 2.7s
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s
   }
 
   .fadeUp2 {
-    -webkit-animation-delay: 3s;
-    animation-delay: 3s
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s
   }
 
   .fadeUp3 {
-    -webkit-animation-delay: 3.3s;
-    animation-delay: 3.3s
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s
   }
 
   @-webkit-keyframes fadeUp {
@@ -317,8 +317,8 @@
   .social-list {
     list-style: none;
     margin: 0;
-    -webkit-animation: fadeUp .5s ease-out 5s both;
-    animation: fadeUp .5s ease-out 5s both;
+    -webkit-animation: fadeUp .5s ease-out 2s both;
+    animation: fadeUp .5s ease-out 2s both;
     will-change: transform, opacity;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -391,8 +391,8 @@
     height: 5px;
     position: absolute;
     top: 20px;
-    -webkit-animation: widen 3s cubic-bezier(.22, .61, .36, 1) 1.5s both;
-    animation: widen 3s cubic-bezier(.22, .61, .36, 1) 1.5s both
+    -webkit-animation: widen 2s cubic-bezier(.22, .61, .36, 1) .5s both;
+    animation: widen 2s cubic-bezier(.22, .61, .36, 1) .5s both
   }
   .logo:before {
     -webkit-transform-origin: 100% 0;
