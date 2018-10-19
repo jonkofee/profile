@@ -83,7 +83,12 @@ function render (req, res) {
     if (err.url) {
       res.redirect(err.url)
     } else if(err.code === 404) {
-      res.status(404).send('404 | Page Not Found')
+      renderer.renderToString({
+        title: 'jonkofee | 404',
+        url: '/404'
+      }, (err, html) => {
+        res.status(404).send(html)
+      })
     } else {
       // Render Error Page or Redirect
       res.status(500).send('500 | Internal Server Error')

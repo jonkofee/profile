@@ -10,7 +10,8 @@ export function createRouter () {
     scrollBehavior: () => ({ y: 0 }),
     routes: [
       { path: '/', component: () => import('../views/IndexView.vue') },
-      { path: '/test', component: () => import('../views/IndexView.vue') }
+      { path: '/test', component: () => import('../views/IndexView.vue') },
+      { path: process.env.VUE_ENV == 'server' ? '/404' : '*', component: () => import('../views/NotFoundView.vue') }
     ]
   })
 }
