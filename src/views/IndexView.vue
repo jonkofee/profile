@@ -1,5 +1,5 @@
 <template>
-  <div itemscope="" itemtype="//schema.org/Person">
+  <div itemscope="" itemtype="https://schema.org/Person">
     <div hidden>
       <meta itemprop="familyName" content="Прищенко"/>
       <meta itemprop="name" content="Сергей"/>
@@ -60,6 +60,7 @@
         </a>
       </li>
     </ul>
+    <router-link to="/testsss">Перейти к Foo</router-link>
   </div>
 </template>
 
