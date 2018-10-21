@@ -6,6 +6,7 @@ const compression = require('compression')
 const microcache = require('route-cache')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
+const pathToRegexp = require('path-to-regexp')
 
 const isProd = process.env.NODE_ENV === 'production'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
@@ -105,6 +106,11 @@ function render (req, res) {
     if (err) {
       return handleError(err)
     }
+
+    if (pathToRegexp('/404').exec(context.url)) { //Если 404 - установим такой код
+      res.status(404)
+    }
+
     res.send(html)
     if (!isProd) {
       console.log(`whole request: ${Date.now() - s}ms`)
