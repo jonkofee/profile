@@ -1,6 +1,6 @@
 <template>
   <div>
-      404
+    <router-link :to="'/'">404</router-link>
   </div>
 </template>
 
@@ -30,4 +30,13 @@ div
   margin: 0 0 10px
   font-weight: 400
   text-shadow: 3px 3px 0 rgba(0,0,0,.4)
+  
+  a
+    color: inherit
+    text-decoration: none
+    
+    :hover 
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer
 </style>
