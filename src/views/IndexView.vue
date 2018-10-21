@@ -60,7 +60,6 @@
         </a>
       </li>
     </ul>
-    <router-link to="test">test</router-link>
   </div>
 </template>
 
