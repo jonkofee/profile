@@ -60,25 +60,16 @@
         </a>
       </li>
     </ul>
+    <router-link to="test">test</router-link>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'item-list',
+    title: "Home",
     data() {
       return {}
-    },
-
-    computed: {},
-
-    beforeMount() {},
-
-    beforeDestroy() {},
-
-    watch: {},
-
-    methods: {}
+    }
   }
 </script>
 
