@@ -60,7 +60,6 @@
         </a>
       </li>
     </ul>
-    <router-link to="/testsss">Перейти к Foo</router-link>
   </div>
 </template>
 
