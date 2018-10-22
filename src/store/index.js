@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { fetchData } from '../api'
 
 Vue.use(Vuex)
 
@@ -15,10 +16,10 @@ export function createStore () {
     },
     actions: {
       FETCH_DATA: ({ commit }) => {
-        commit('SET_DATA', {
-          login: 'jonkofee',
-          spec: 'Backend developer'
-        })
+        return fetchData()
+          .then(data => {
+            commit('SET_DATA', data)
+          })
       }
     }
   })

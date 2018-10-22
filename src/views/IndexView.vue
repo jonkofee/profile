@@ -35,7 +35,7 @@
       </div>
     </div>
     <p class="subline" itemprop="jobTitle">
-      <span class="subline__text-item fadeUp fadeUp1">{{ spec }}</span>
+      <span class="subline__text-item fadeUp fadeUp1">{{ resumeHeadline }}</span>
     </p>
     <ul class="social-list" aria-label="Find me on other platforms:">
       <li class="social-list__item">
@@ -76,8 +76,8 @@
       login() {
         return this.$store.state.data.login
       },
-      spec() {
-        return this.$store.state.data.spec
+      resumeHeadline() {
+        return this.$store.state.data.resume_headline
       }
     }
   }
