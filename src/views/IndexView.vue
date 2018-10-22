@@ -10,7 +10,7 @@
       <span itemprop="birthPlace">Амвросиевка, Украина</span>
       <meta itemprop="email" content="jonkofee@icloud.com"/>
     </div>
-    <h1 itemprop="alternateName">jonkofee</h1>
+    <h1 itemprop="alternateName">{{ login }}</h1>
     <div class="logo_wrapper">
       <div class="logo">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 98 104">
@@ -35,7 +35,7 @@
       </div>
     </div>
     <p class="subline" itemprop="jobTitle">
-      <span class="subline__text-item fadeUp fadeUp1">Backend Developer</span>
+      <span class="subline__text-item fadeUp fadeUp1">{{ spec }}</span>
     </p>
     <ul class="social-list" aria-label="Find me on other platforms:">
       <li class="social-list__item">
@@ -68,6 +68,17 @@
     title: "Home",
     data() {
       return {}
+    },
+    asyncData ({ store, route }) {
+      return store.dispatch('FETCH_DATA')
+    },
+    computed: {
+      login() {
+        return this.$store.state.data.login
+      },
+      spec() {
+        return this.$store.state.data.spec
+      }
     }
   }
 </script>
