@@ -109,6 +109,11 @@ function render (req, res) {
       return handleError(err)
     }
 
+    // Add amp-custom tag to added CSS
+    html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
+    // Remove every script tag from generated HTML
+    html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+
     if (pathToRegexp('/404').exec(context.url)) { //Если 404 - установим такой код
       res.status(404)
     }
