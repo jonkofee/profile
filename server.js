@@ -114,6 +114,8 @@ function render (req, res) {
     // Remove every script tag from generated HTML
     html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
 
+    html = html.replace('</head>', '<script async src="https://cdn.ampproject.org/v0.js"></script></head>')
+
     if (pathToRegexp('/404').exec(context.url)) { //Если 404 - установим такой код
       res.status(404)
     }
