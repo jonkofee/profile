@@ -69,7 +69,7 @@
     data() {
       return {}
     },
-    asyncData ({ store, route }) {
+    asyncData ({ store }) {
       return store.dispatch('FETCH_DATA')
     },
     computed: {
