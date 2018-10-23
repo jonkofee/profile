@@ -100,8 +100,10 @@ function render (req, res) {
 
   const context = {
     title: 'jonkofee', // default title
-    url: req.url
+    url: req.url,
+    fullUrl: `${req.protocol}://${req.headers.host}${req.url}`
   }
+  
   renderer.renderToString(context, (err, html) => {
     if (err) {
       return handleError(err)
