@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    title: '404',
     data() {
       return {}
     },

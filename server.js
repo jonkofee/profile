@@ -80,14 +80,18 @@ function render (req, res) {
   res.setHeader("Content-Type", "text/html")
   res.setHeader("Server", serverInfo)
 
+  const context = {
+    title: 'jonkofee', // default title
+    url: req.url,
+    fullUrl: `${req.protocol}://${req.headers.host}${req.url}`
+  }
+
   const handleError = err => {
     if (err.url) {
       res.redirect(err.url)
     } else if(err.code === 404) {
-      renderer.renderToString({
-        title: 'jonkofee | 404',
-        url: '/404'
-      }, (err, html) => {
+      context.url = '/404'
+      renderer.renderToString(context, (err, html) => {
         res.status(404).send(html)
       })
     } else {
@@ -96,12 +100,6 @@ function render (req, res) {
       console.error(`error during render : ${req.url}`)
       console.error(err.stack)
     }
-  }
-
-  const context = {
-    title: 'jonkofee', // default title
-    url: req.url,
-    fullUrl: `${req.protocol}://${req.headers.host}${req.url}`
   }
   
   renderer.renderToString(context, (err, html) => {
