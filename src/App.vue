@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="container">
     <header>
+      <router-link :to="$route.meta.prev" v-if="$route.meta.prev">Prev</router-link>
       <router-view></router-view>
+      <router-link :to="$route.meta.next" v-if="$route.meta.next">Next</router-link>
     </header>
   </div>
 </template>
