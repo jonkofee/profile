@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export function createStore () {
   return new Vuex.Store({
     state: {
-      data: {}
+      data: null
     },
     mutations: {
       SET_DATA: (state, data) => {

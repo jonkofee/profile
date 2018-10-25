@@ -10,7 +10,8 @@ export function createRouter () {
     scrollBehavior: () => ({ y: 0 }),
     routes: [
       { path: '/', component: () => import('../views/IndexView.vue'), meta: { next: '/skills' } },
-      { path: '/skills', component: () => import('../views/SkillsView.vue'), meta: { prev: '/' }  },
+      { path: '/skills', component: () => import('../views/SkillsView.vue'), meta: { prev: '/', next: '/test' }  },
+      { path: '/test', component: () => import('../views/TestView.vue'), meta: { prev: '/skills' }  },
       { path: process.env.VUE_ENV == 'server' ? '/404' : '*', component: () => import('../views/NotFoundView.vue') }
     ]
   })

@@ -5,6 +5,9 @@
 </template>
 
 <script>
+  export default {
+    title: "Skills"
+  }
 </script>
 
 <style lang="stylus">
