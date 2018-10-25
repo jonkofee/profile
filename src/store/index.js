@@ -15,11 +15,10 @@ export function createStore () {
       }
     },
     actions: {
-      FETCH_DATA: ({ commit }) => {
-        return fetchData()
-          .then(data => {
-            commit('SET_DATA', data)
-          })
+      FETCH_DATA: ({ commit, state }) => {
+        return state.data
+          ? Promise.resolve(state.data)
+          : fetchData().then(data => commit('SET_DATA', data))
       }
     }
   })
