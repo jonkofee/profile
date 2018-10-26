@@ -22,6 +22,7 @@
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase": "4.6.2",
+    "gsap": "^2.0.2",
     "lru-cache": "^4.1.1",
     "normalize.css": "^8.0.0",
     "path-to-regexp": "^2.4.0",
