@@ -34,10 +34,10 @@
       </svg>
       </div>
     </div>
-    <p class="subline" itemprop="jobTitle">
-      <span class="subline__text-item fadeUp fadeUp1">{{ resumeHeadline }}</span>
+    <p class="job-title" itemprop="jobTitle" ref="jobTitle">
+      {{ resumeHeadline }}
     </p>
-    <ul class="social-list" aria-label="Find me on other platforms:">
+    <ul class="social-list" ref="socialList">
       <li class="social-list__item">
         <a itemprop="sameAs" href="https://github.com/jonkofee/" target="_blank" rel="me noopener noreferrer" class="social-list__link">
           <svg class="social-list__icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
@@ -64,6 +64,9 @@
 </template>
 
 <script>
+  import { TweenMax } from 'gsap'
+  import CSSRulePlugin from 'gsap/src/uncompressed/plugins/CSSRulePlugin'
+
   export default {
     title: "Home",
     data() {
@@ -79,6 +82,28 @@
       resumeHeadline() {
         return this.$store.state.data.resume_headline
       }
+    },
+    mounted() {
+      this.animateJobTitle()
+      this.animateSocialLink()
+    },
+    methods: {
+      animateJobTitle() {
+        TweenMax.to(this.$refs.jobTitle, .5, {
+          delay: 1.2,
+          ease: Power2.easeOut,
+          transform: "translateY(0)",
+          opacity: 1
+        })
+      },
+      animateSocialLink() {
+        TweenMax.to(this.$refs.socialList, .5, {
+          delay: 2,
+          ease: Power2.easeOut,
+          transform: "translateY(0)",
+          opacity: 1
+        })
+      }
     }
   }
 </script>
@@ -91,89 +116,6 @@
     margin: 0 0 10px
     font-weight: 700
     text-shadow: 3px 3px 0 rgba(0,0,0,.4)
-
-  .fadeUp {
-    opacity: 0;
-    display: inline-block;
-    -webkit-transform: translateY(50%);
-    transform: translateY(50%);
-    -webkit-animation: fadeUp .5s ease-out both;
-    animation: fadeUp .5s ease-out both;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    will-change: opacity, transform
-  }
-
-  .fadeUp1 {
-    -webkit-animation-delay: 1.2s;
-    animation-delay: 1.2s
-  }
-
-  .fadeUp2 {
-    -webkit-animation-delay: 1.5s;
-    animation-delay: 1.5s
-  }
-
-  .fadeUp3 {
-    -webkit-animation-delay: 1.8s;
-    animation-delay: 1.8s
-  }
-
-  @-webkit-keyframes fadeUp {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(50%);
-      transform: translateY(50%)
-    }
-
-    to {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0)
-    }
-  }
-
-  @keyframes fadeUp {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(50%);
-      transform: translateY(50%)
-    }
-
-    to {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0)
-    }
-  }
-
-  @-webkit-keyframes fadeDown {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%)
-    }
-
-    to {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0)
-    }
-  }
-
-  @keyframes fadeDown {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%)
-    }
-
-    to {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0)
-    }
-  }
 
   @-webkit-keyframes bounceIn {
 
@@ -315,22 +257,23 @@
     }
   }
 
-  .subline {
+  .job-title {
     font-size: 28px;
     letter-spacing: 1px;
     font-weight: 700;
     color: rgba(0, 0, 0, .8);
     margin-bottom: 20px
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    opacity 0
+    will-change: opacity, transform
   }
 
   .social-list {
     list-style: none;
     margin: 0;
-    -webkit-animation: fadeUp .5s ease-out 2s both;
-    animation: fadeUp .5s ease-out 2s both;
-    will-change: transform, opacity;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
@@ -340,6 +283,7 @@
     -ms-flex-item-align: auto;
     align-self: auto;
     padding: 30px
+    opacity 0
   }
 
   .social-list__item,
