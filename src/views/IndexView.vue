@@ -89,12 +89,18 @@
     methods: {
       animate() { 
         new TimelineLite()
+          .fromTo([CSSRulePlugin.getRule(".logo:before"), CSSRulePlugin.getRule(".logo:after")], 2, {
+            transform: "scaleX(0)"
+          }, 
+          {
+            delay: .5,
+            transform: "scaleX(0.72)"
+          })
           .fromTo(this.$refs.jobTitle, .5, {
             transform: "translateY(50%)",
             opacity: 0
           }, 
           {
-            delay: 1.2,
             ease: Power2.easeOut,
             transform: "translateY(0)",
             opacity: 1
@@ -121,30 +127,6 @@
     margin: 0 0 10px
     font-weight: 700
     text-shadow: 3px 3px 0 rgba(0,0,0,.4)
-
-  @-webkit-keyframes widen {
-    0% {
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0)
-    }
-
-    to {
-      -webkit-transform: scaleX(.72);
-      transform: scaleX(.72)
-    }
-  }
-
-  @keyframes widen {
-    0% {
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0)
-    }
-
-    to {
-      -webkit-transform: scaleX(.72);
-      transform: scaleX(.72)
-    }
-  }
 
   .job-title {
     font-size: 28px;
@@ -226,8 +208,7 @@
     height: 5px;
     position: absolute;
     top: 20px;
-    -webkit-animation: widen 2s cubic-bezier(.22, .61, .36, 1) .5s both;
-    animation: widen 2s cubic-bezier(.22, .61, .36, 1) .5s both
+    transform: scaleX(0)
   }
   .logo:before {
     -webkit-transform-origin: 100% 0;
