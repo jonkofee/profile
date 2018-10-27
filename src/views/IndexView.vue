@@ -141,30 +141,6 @@
     }
   }
 
-  @-webkit-keyframes widen-small {
-    0% {
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0)
-    }
-
-    to {
-      -webkit-transform: scaleX(.35);
-      transform: scaleX(.35)
-    }
-  }
-
-  @keyframes widen-small {
-    0% {
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0)
-    }
-
-    to {
-      -webkit-transform: scaleX(.35);
-      transform: scaleX(.35)
-    }
-  }
-
   .job-title {
     font-size: 28px;
     letter-spacing: 1px;
