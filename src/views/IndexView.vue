@@ -84,19 +84,17 @@
       }
     },
     mounted() {
-      this.animateJobTitle()
-      this.animateSocialLink()
+      this.animate()
     },
     methods: {
-      animateJobTitle() {
+      animate() {
         TweenMax.to(this.$refs.jobTitle, .5, {
           delay: 1.2,
           ease: Power2.easeOut,
           transform: "translateY(0)",
           opacity: 1
         })
-      },
-      animateSocialLink() {
+
         TweenMax.to(this.$refs.socialList, .5, {
           delay: 2,
           ease: Power2.easeOut,
