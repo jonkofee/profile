@@ -89,10 +89,11 @@
     methods: {
       animate() { 
         new TimelineLite()
-          .fromTo([CSSRulePlugin.getRule(".logo:before"), CSSRulePlugin.getRule(".logo:after")], 2, {
+          .fromTo([CSSRulePlugin.getRule(".logo:before"), CSSRulePlugin.getRule(".logo:after")], .7, {
             transform: "scaleX(0)"
           }, 
           {
+            ease: Expo.easeOut,
             delay: .5,
             transform: "scaleX(0.72)"
           })
@@ -209,6 +210,7 @@
     position: absolute;
     top: 20px;
     transform: scaleX(0)
+    will-change: scaleX
   }
   .logo:before {
     -webkit-transform-origin: 100% 0;
