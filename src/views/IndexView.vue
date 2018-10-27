@@ -89,13 +89,21 @@
     methods: {
       animate() { 
         new TimelineLite()
-          .to(this.$refs.jobTitle, .5, {
+          .fromTo(this.$refs.jobTitle, .5, {
+            transform: "translateY(50%)",
+            opacity: 0
+          }, 
+          {
             delay: 1.2,
             ease: Power2.easeOut,
             transform: "translateY(0)",
             opacity: 1
           })
-          .to(this.$refs.socialList, .5, {
+          .fromTo(this.$refs.socialList, .5, {
+            transform: "translateY(50%)",
+            opacity: 0
+          },
+          {
             ease: Power2.easeOut,
             transform: "translateY(0)",
             opacity: 1
@@ -144,17 +152,11 @@
     font-weight: 700;
     color: rgba(0, 0, 0, .8);
     margin-bottom: 20px
-    -webkit-transform: translateY(50%);
-    transform: translateY(50%);
-    opacity 0
-    will-change: opacity, transform
   }
 
   .social-list {
     list-style: none;
     margin: 0;
-    -webkit-transform: translateY(50%);
-    transform: translateY(50%);
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
@@ -164,7 +166,6 @@
     -ms-flex-item-align: auto;
     align-self: auto;
     padding: 30px
-    opacity 0
   }
 
   .social-list__item,
