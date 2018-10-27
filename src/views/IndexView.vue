@@ -64,7 +64,7 @@
 </template>
 
 <script>
-  import { TweenMax } from 'gsap'
+  import { TimelineLite } from 'gsap'
   import CSSRulePlugin from 'gsap/src/uncompressed/plugins/CSSRulePlugin'
 
   export default {
@@ -87,20 +87,19 @@
       this.animate()
     },
     methods: {
-      animate() {
-        TweenMax.to(this.$refs.jobTitle, .5, {
-          delay: 1.2,
-          ease: Power2.easeOut,
-          transform: "translateY(0)",
-          opacity: 1
-        })
-
-        TweenMax.to(this.$refs.socialList, .5, {
-          delay: 2,
-          ease: Power2.easeOut,
-          transform: "translateY(0)",
-          opacity: 1
-        })
+      animate() { 
+        new TimelineLite()
+          .to(this.$refs.jobTitle, .5, {
+            delay: 1.2,
+            ease: Power2.easeOut,
+            transform: "translateY(0)",
+            opacity: 1
+          })
+          .to(this.$refs.socialList, .5, {
+            ease: Power2.easeOut,
+            transform: "translateY(0)",
+            opacity: 1
+          })
       }
     }
   }
