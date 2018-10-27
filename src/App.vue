@@ -99,6 +99,7 @@
     padding: 0;
     background-color: #1b9db4;
     color: #111
+    fill: #111
   }
 
   body {
