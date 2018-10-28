@@ -100,7 +100,6 @@ export default {
     font-family "Brandon Grotesque", sans-serif
     font-size 40px
     overflow hidden
-    -webkit-transform translate3d(0, 0, 0)
     transform translate3d(0, 0, 0)
     background-attachment fixed
     background-color #1b9db4
@@ -122,24 +121,12 @@ export default {
     width 100%
 
   header
-    display -webkit-box
-    display -ms-flexbox
     display flex
-    -webkit-box-orient vertical
-    -webkit-box-direction normal
-    -ms-flex-direction column
     flex-direction column
-    -ms-flex-wrap nowrap
     flex-wrap nowrap
-    -webkit-box-pack center
-    -ms-flex-pack center
     justify-content center
-    -ms-flex-line-pack start
     align-content flex-start
-    -webkit-box-align center
-    -ms-flex-align center
     align-items center
-    -webkit-font-kerning normal
     font-kerning normal
     margin 0 auto
     color #111

@@ -120,13 +120,8 @@
   .social-list
     list-style none
     margin 0
-    -webkit-box-ordinal-group 1
-    -ms-flex-order 0
     order 0
-    -webkit-box-flex 0
-    -ms-flex 0 1 auto
     flex 0 1 auto
-    -ms-flex-item-align auto
     align-self auto
     padding 30px
 
@@ -140,7 +135,6 @@
       height 45px
       line-height 44px
       vertical-align middle
-      -webkit-transition background-color .25s ease
       transition background-color .25s ease
       margin 5px
 
@@ -165,9 +159,6 @@
     height 50px
     width 50px
     margin 0 auto 35px
-    -webkit-user-select none
-    -moz-user-select none
-    -ms-user-select none
     user-select none
 
   .line
@@ -179,12 +170,10 @@
     transform scaleX(.72)
 
     &_left
-      -webkit-transform-origin 100% 0
       transform-origin 100% 0
       left -3em
 
     &_right
-      -webkit-transform-origin 0 0
       transform-origin 0 0
       right -3em
 
