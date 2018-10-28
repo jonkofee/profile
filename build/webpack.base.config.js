@@ -13,7 +13,7 @@ const postCssLoader = {
   options: {
     ident: 'postcss',
     plugins: () => [
-      require('autoprefixer')()
+      require('autoprefixer')({ browsers:['ie >= 8', 'last 4 version'] })
     ]
   }
 }
