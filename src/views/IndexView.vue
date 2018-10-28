@@ -122,105 +122,92 @@
 
 <style lang="stylus">
   h1
-    letter-spacing: 10px
-    font-size: 1.5em
-    text-transform: uppercase
-    margin: 0 0 10px
-    font-weight: 700
-    text-shadow: 3px 3px 0 rgba(0,0,0,.4)
+    letter-spacing 10px
+    font-size 1.5em
+    text-transform uppercase
+    margin 0 0 10px
+    font-weight 700
+    text-shadow 3px 3px 0 rgba(0,0,0,.4)
 
-  .job-title {
-    font-size: 28px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: rgba(0, 0, 0, .8);
-    margin-bottom: 20px
-  }
+  .job-title
+    font-size 28px
+    letter-spacing 1px
+    font-weight 700
+    color rgba(0, 0, 0, .8)
+    margin-bottom 20px
 
-  .social-list {
-    list-style: none;
-    margin: 0;
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    padding: 30px
-  }
+  .social-list
+    list-style none
+    margin 0
+    -webkit-box-ordinal-group 1
+    -ms-flex-order 0
+    order 0
+    -webkit-box-flex 0
+    -ms-flex 0 1 auto
+    flex 0 1 auto
+    -ms-flex-item-align auto
+    align-self auto
+    padding 30px
 
-  .social-list__item,
-  .social-list__link {
-    display: inline-block
-  }
+    .social-list__item, .social-list__link
+      display inline-block
 
-  .social-list__link {
-    background-color: transparent;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    line-height: 44px;
-    vertical-align: middle;
-    -webkit-transition: background-color .25s ease;
-    transition: background-color .25s ease;
-    will-change: transform;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
-    margin: 5px
-  }
+    .social-list__link
+      background-color transparent
+      border-radius 50%
+      width 45px
+      height 45px
+      line-height 44px
+      vertical-align middle
+      -webkit-transition background-color .25s ease
+      transition background-color .25s ease
+      will-change transform
+      -webkit-transform translate3d(0, 0, 0)
+      transform translate3d(0, 0, 0)
+      margin 5px
 
-  .social-list__link:focus, .social-list__link:hover {
-    background-color: rgba(0, 0, 0, .4);
-    outline: 0;
-    text-decoration: none
-}
+      &:focus, &:hover
+        background-color rgba(0, 0, 0, .4)
+        outline 0
+        text-decoration none
 
-  .social-list__icon {
-    width: 25px
-  }
+    .social-list__icon
+      width 25px
 
-  .social-list:hover .social-list__link:focus:after,
-  .social-list:hover .social-list__link:focus:before {
-    display: none
-  }
+    &:hover .social-list__link:focus:after, &:hover .social-list__link:focus:before
+      display none
 
-  .social-list:hover .social-list__link:hover:after,
-  .social-list:hover .social-list__link:hover:before {
-    display: inherit
-  }
+    &:hover .social-list__link:hover:after, &:hover .social-list__link:hover:before
+      display inherit
 
-.logo
-    height: 50px
-    width: 50px
-    margin: 0 auto 35px
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
-    user-select: none
-    position: relative
+  .logo
+    height 50px
+    width 50px
+    margin 0 auto 35px
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+    position relative
 
-.logo:after,
-  .logo:before {
-    content: "";
-    width: 7em;
-    border-top: 5px solid #111;
-    height: 5px;
-    position: absolute;
-    top: 20px;
-    transform: scaleX(0)
-    will-change: scaleX
-  }
-  .logo:before {
-    -webkit-transform-origin: 100% 0;
-    transform-origin: 100% 0;
-    right: 60px
-  }
-  .logo:after {
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    left: 60px
-  }
+    &:after, &:before
+      content ""
+      width 7em
+      border-top 5px solid #111
+      height 5px
+      position absolute
+      top 20px
+      transform scaleX(0)
+      will-change scaleX
+
+    &:after
+      -webkit-transform-origin 0 0
+      transform-origin 0 0
+      left 60px
+
+    &:before
+      -webkit-transform-origin 100% 0
+      transform-origin 100% 0
+      right 60px
 
 </style>
