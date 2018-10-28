@@ -2,7 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
 const express = require('express')
-const compression = require('compression')
 const microcache = require('route-cache')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
@@ -63,7 +62,6 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 1000 * 60 * 60 * 24 * 30 : 0
 })
 
-app.use(compression({ threshold: 0 }))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
 
 // since this app has no user-specific content, every page is micro-cacheable.
