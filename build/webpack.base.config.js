@@ -8,6 +8,16 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 
 const isProd = NODE_ENV === 'production'
 
+const postCssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    plugins: () => [
+      require('autoprefixer')()
+    ]
+  }
+}
+
 module.exports = {
   mode: NODE_ENV,
   devtool: isProd
@@ -60,6 +70,7 @@ module.exports = {
                 loader: 'css-loader',
                 options: { minimize: isProd }
               },
+              postCssLoader,
               'stylus-loader'
             ]
           },
@@ -70,6 +81,7 @@ module.exports = {
                 loader: 'css-loader',
                 options: { minimize: isProd }
               },
+              postCssLoader,
               'stylus-loader'
             ]
           }
