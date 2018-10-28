@@ -6,6 +6,16 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
 
+const postCssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    plugins: () => [
+      require('autoprefixer')()
+    ]
+  }
+}
+
 module.exports = {
   devtool: isProd
     ? false
@@ -52,13 +62,27 @@ module.exports = {
               use: [
                 {
                   loader: 'css-loader',
-                  options: { minimize: true }
+                  options: {
+                    minimize: true,
+                    importLoaders: 1
+                  }
                 },
+                postCssLoader,
                 'stylus-loader'
               ],
               fallback: 'vue-style-loader'
             })
-          : ['vue-style-loader', 'css-loader', 'stylus-loader']
+          : [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          postCssLoader,
+          'stylus-loader'
+        ]
       },
     ]
   },
