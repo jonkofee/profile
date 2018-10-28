@@ -26,6 +26,53 @@
   </div>
 </template>
 
+<script>
+import { TimelineMax } from 'gsap'
+
+export default {
+  data() {
+    return {
+      colors: [
+        'f06060',
+        '2ac56c',
+        'feaf10',
+        '2ecc71'
+      ]
+    }
+  },
+  mounted() {
+    this.animate()
+  },
+  methods: {
+    animate() { 
+      const duration = 60
+      const container = 'body'
+
+      const tl = new TimelineMax({ repeat: -1, yoyo: true })
+
+      this.shuffleColors()
+
+      for (const color of this.colors) {
+        tl.to(container, duration, {
+          backgroundColor: `#${color}`
+        })
+      }
+    },
+    shuffleColors() {
+      let j, x, i;
+      for (i = this.colors.length - 1; i > 0; i--) {
+          j = Math.floor(Math.random() * (i + 1));
+          x = this.colors[i];
+          this.colors[i] = this.colors[j];
+          this.colors[j] = x;
+      }
+      return this.colors;
+    }
+  }
+}
+</script>
+
+
 <style lang="stylus">
   @import '../node_modules/normalize.css/normalize.css';
 
@@ -43,61 +90,12 @@
     font-style: normal
   }
 
-  @-webkit-keyframes cheesy-colors-bg {
-
-    0%,
-    to {
-      background-color: #1b9db4
-    }
-
-    20% {
-      background-color: #f06060
-    }
-
-    40% {
-      background-color: #2ac56c
-    }
-
-    60% {
-      background-color: #feaf10
-    }
-
-    80% {
-      background-color: #2ecc71
-    }
-  }
-
-  @keyframes cheesy-colors-bg {
-
-    0%,
-    to {
-      background-color: #1b9db4
-    }
-
-    20% {
-      background-color: #f06060
-    }
-
-    40% {
-      background-color: #2ac56c
-    }
-
-    60% {
-      background-color: #feaf10
-    }
-
-    80% {
-      background-color: #2ecc71
-    }
-  }
-
   body,
   html {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #1b9db4;
     color: #111
     fill: #111
   }
@@ -106,8 +104,6 @@
     font-family: "Brandon Grotesque", sans-serif;
     font-size: 40px;
     overflow: hidden;
-    -webkit-animation: cheesy-colors-bg 200s linear infinite;
-    animation: cheesy-colors-bg 200s linear infinite;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     background-attachment: fixed;
@@ -115,6 +111,8 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E") @media (max-width: 415px) {
       font-size 32px
     }
+
+    background-color #1b9db4
 
     @media (max-width: 376px) {
       font-size 28px
