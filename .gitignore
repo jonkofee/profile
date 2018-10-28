@@ -9,3 +9,4 @@ yarn-error.log
 \.env
 
 docker/nginx/cert
+package-lock\.json
