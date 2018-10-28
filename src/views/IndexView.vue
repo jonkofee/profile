@@ -12,6 +12,7 @@
     </div>
     <h1 itemprop="alternateName">{{ login }}</h1>
     <div class="logo_wrapper">
+      <div ref="lineLeft" class="line line_left" />
       <div class="logo">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 98 104">
         <defs>
@@ -33,6 +34,7 @@
         <path class="clothing" d="M6.1,102 v-13.5 l26.4,-18 l15.5,30 l15.5,-30 l26.4,18 v13.5"></path>
       </svg>
       </div>
+      <div ref="lineRight" class="line line_right" />
     </div>
     <p class="job-title" itemprop="jobTitle" ref="jobTitle">
       {{ resumeHeadline }}
@@ -65,7 +67,6 @@
 
 <script>
   import { TimelineLite } from 'gsap'
-  import CSSRulePlugin from 'gsap/src/uncompressed/plugins/CSSRulePlugin'
 
   export default {
     title: "Home",
@@ -87,34 +88,14 @@
       this.animate()
     },
     methods: {
-      animate() { 
-        new TimelineLite()
-          .fromTo([CSSRulePlugin.getRule(".logo:before"), CSSRulePlugin.getRule(".logo:after")], .7, {
-            transform: "scaleX(0)"
-          }, 
-          {
-            ease: Expo.easeOut,
-            delay: .5,
-            transform: "scaleX(0.72)"
-          })
-          .fromTo(this.$refs.jobTitle, .5, {
-            transform: "translateY(50%)",
-            opacity: 0
-          }, 
-          {
-            ease: Power2.easeOut,
-            transform: "translateY(0)",
-            opacity: 1
-          })
-          .fromTo(this.$refs.socialList, .5, {
-            transform: "translateY(50%)",
-            opacity: 0
-          },
-          {
-            ease: Power2.easeOut,
-            transform: "translateY(0)",
-            opacity: 1
-          })
+      animate() {
+        const { lineLeft, lineRight, jobTitle, socialList } = this.$refs
+        const lines = [lineLeft, lineRight]
+
+        new TimelineLite({ delay: .5 })
+          .from(lines, .5, { scaleX: 0, ease: Expo.easeOut })
+          .from(jobTitle, .5, { y: '50%', autoAlpha: 0, ease: Power2.easeOut })
+          .from(socialList, .5, { y: '50%', autoAlpha: 0, ease: Power2.easeOut })
       }
     }
   }
@@ -161,9 +142,6 @@
       vertical-align middle
       -webkit-transition background-color .25s ease
       transition background-color .25s ease
-      will-change transform
-      -webkit-transform translate3d(0, 0, 0)
-      transform translate3d(0, 0, 0)
       margin 5px
 
       &:focus, &:hover
@@ -180,6 +158,9 @@
     &:hover .social-list__link:hover:after, &:hover .social-list__link:hover:before
       display inherit
 
+  .logo_wrapper
+    position relative
+
   .logo
     height 50px
     width 50px
@@ -188,26 +169,23 @@
     -moz-user-select none
     -ms-user-select none
     user-select none
-    position relative
 
-    &:after, &:before
-      content ""
-      width 7em
-      border-top 5px solid #111
-      height 5px
-      position absolute
-      top 20px
-      transform scaleX(0)
-      will-change scaleX
+  .line
+    width 7em
+    border-top 5px solid #111
+    height 5px
+    position absolute
+    top 20px
+    transform scaleX(.72)
 
-    &:after
-      -webkit-transform-origin 0 0
-      transform-origin 0 0
-      left 60px
-
-    &:before
+    &_left
       -webkit-transform-origin 100% 0
       transform-origin 100% 0
-      right 60px
+      left -3em
+
+    &_right
+      -webkit-transform-origin 0 0
+      transform-origin 0 0
+      right -3em
 
 </style>
