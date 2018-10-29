@@ -1,27 +1,7 @@
 <template>
   <div id="app" class="container">
     <header>
-      <router-link class="arrow-prev arrow" v-if="$route.meta.prev" :to="$route.meta.prev">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-          y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-          <mask id="arrow">
-            <rect width="512" height="512" fill="white" />
-            <path id="test" d="M421.2,223.8c-28.3-28.3-56.6-56.6-84.9-84.9c-26.9-26.9-75.1-7.1-75.1,31c0,13.7,0,27.4,0,41.1 c-45.6,0-91.2,0-136.9,0c-56.9,0-57.4,88.2-0.6,88.2c45.8,0,91.7,0,137.5,0c0,12,0,23.9,0,35.9c-0.2,2.7-0.2,5.4,0.2,8.1 c1.3,18.9,12.6,31.1,26.8,36.4c13.9,6.8,31,6.7,45.6-6c2.4-1.8,4.5-3.8,6.4-6.2c27.1-27.1,54.1-54.1,81.2-81.2 C438.6,269.1,438.1,240.8,421.2,223.8z"></path>
-          </mask>
-          <path transform="translate(390, 0) rotate(90 60 60)" mask="url(#arrow)" d="M7.9,256C7.9,119,119,7.9,256,7.9C393,7.9,504.1,119,504.1,256c0,137-111.1,248.1-248.1,248.1 C119,504.1,7.9,393,7.9,256z"></path>
-        </svg>
-      </router-link>
       <router-view></router-view>
-      <router-link class="arrow-next arrow" v-if="$route.meta.next" :to="$route.meta.next">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-          y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-          <mask id="arrow">
-            <rect width="512" height="512" fill="white" />
-            <path id="test" d="M421.2,223.8c-28.3-28.3-56.6-56.6-84.9-84.9c-26.9-26.9-75.1-7.1-75.1,31c0,13.7,0,27.4,0,41.1 c-45.6,0-91.2,0-136.9,0c-56.9,0-57.4,88.2-0.6,88.2c45.8,0,91.7,0,137.5,0c0,12,0,23.9,0,35.9c-0.2,2.7-0.2,5.4,0.2,8.1 c1.3,18.9,12.6,31.1,26.8,36.4c13.9,6.8,31,6.7,45.6-6c2.4-1.8,4.5-3.8,6.4-6.2c27.1-27.1,54.1-54.1,81.2-81.2 C438.6,269.1,438.1,240.8,421.2,223.8z"></path>
-          </mask>
-          <path transform="translate(390, 0) rotate(90 60 60)" mask="url(#arrow)" d="M7.9,256C7.9,119,119,7.9,256,7.9C393,7.9,504.1,119,504.1,256c0,137-111.1,248.1-248.1,248.1 C119,504.1,7.9,393,7.9,256z"></path>
-        </svg>
-      </router-link>
     </header>
   </div>
 </template>
@@ -140,24 +120,4 @@ export default {
 
   :focus
     outline 0
-
-  .arrow
-    position fixed
-    left 0
-    right 0
-    width 50px
-    margin auto
-
-  .arrow svg 
-    width 50px
-    height 50px
-    text-decoration none
-    display block
-
-  .arrow-next
-    bottom 50px
-
-  .arrow-prev
-    top 50px
-    transform scaleY(-1)
 </style>
