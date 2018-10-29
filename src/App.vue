@@ -1,10 +1,22 @@
 <template>
   <div id="app" class="container">
+    <paginator/>
     <main>
       <router-view></router-view>
     </main>
   </div>
 </template>
+
+<script>
+import Paginator from './components/Paginator.vue'
+
+export default {
+  components: {
+    Paginator
+  }
+}
+</script>
+
 
 <style lang="stylus">
   @import '../node_modules/normalize.css/normalize.css'
