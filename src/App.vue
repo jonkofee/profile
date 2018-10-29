@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="container">
-    <header>
+    <main>
       <router-view></router-view>
-    </header>
+    </main>
   </div>
 </template>
 
@@ -95,12 +95,12 @@ export default {
     @media (max-width: 321px)
       font-size 24px
 
-  .container, header
+  .container, main
     text-align center
     height 100%
     width 100%
 
-  header
+  main
     display flex
     flex-direction column
     flex-wrap nowrap
