@@ -1,11 +1,47 @@
 <template>
   <nav>
-    <a href="#"></a>
-    <a href="#" class="active"></a>
-    <a href="#"></a>
-    <a href="#"></a>
+    <router-link 
+      v-for="(page, index) in pages" 
+      :key="index" 
+      :to="page"
+    />
   </nav>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      pages: []
+    }
+  },
+  created() {
+    this.initPagesList()
+  },
+  methods: {
+    initPagesList() {
+      const { routes } = this.$router.options
+
+      this.recursiveScan(routes, routes.find(element => element.path == '/'))
+    },
+    recursiveScan(routes, elem) {
+      if (!elem) return
+
+      this.pages.push(elem.path)
+
+      if (!elem.meta) return
+
+      if (!elem.meta.next) return
+
+      elem = routes.find(element => element.path == elem.meta.next)
+
+      return this.recursiveScan(routes, elem)
+      
+    }
+  }
+}
+</script>
+
 
 <style lang="stylus" scoped>
 nav {
@@ -34,7 +70,7 @@ a {
   will-change: transform;
 }
 
-.active {
+.router-link-exact-active {
   background: #c93756;
   transform: scale(1);
   border-color: #5b3256;
