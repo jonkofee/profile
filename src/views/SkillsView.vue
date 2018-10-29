@@ -6,7 +6,10 @@
 
 <script>
   export default {
-    title: "Skills"
+    title: "Skills",
+    asyncData ({ store }) {
+      return store.dispatch('FETCH_DATA')
+    }
   }
 </script>
 
