@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav v-show="pages.length > 1">
     <router-link 
       v-for="(page, index) in pages" 
       :key="index" 
