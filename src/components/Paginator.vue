@@ -12,31 +12,22 @@
 export default {
   data() {
     return {
+      routes: this.$router.options.routes,
       pages: []
     }
   },
   created() {
-    this.initPagesList()
+    const indexRoute = this.routes.find(route => route.path === '/')
+    this.recursiveAddPages(indexRoute)
   },
   methods: {
-    initPagesList() {
-      const { routes } = this.$router.options
+    recursiveAddPages(route) {
+      this.pages.push(route.path)
 
-      this.recursiveScan(routes, routes.find(element => element.path == '/'))
-    },
-    recursiveScan(routes, elem) {
-      if (!elem) return
-
-      this.pages.push(elem.path)
-
-      if (!elem.meta) return
-
-      if (!elem.meta.next) return
-
-      elem = routes.find(element => element.path == elem.meta.next)
-
-      return this.recursiveScan(routes, elem)
-      
+      if (route.meta && route.meta.next) {
+        const nextRoute = this.routes.find(el => el.path === route.meta.next)
+        return this.recursiveAddPages(nextRoute)
+      }
     }
   }
 }
