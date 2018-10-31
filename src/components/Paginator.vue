@@ -1,5 +1,5 @@
 <template>
-  <nav v-show="pages.length > 1">
+  <nav v-show="pages.length > 1 && currentRouteIsInclude">
     <router-link 
       v-for="(page, index) in pages" 
       :key="index" 
@@ -28,6 +28,11 @@ export default {
         const nextRoute = this.routes.find(el => el.path === route.meta.next)
         return this.recursiveAddPages(nextRoute)
       }
+    }
+  },
+  computed: {
+    currentRouteIsInclude() {
+      return this.pages.includes(this.$route.path)
     }
   }
 }
