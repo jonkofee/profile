@@ -45,7 +45,6 @@ svg
   animation-duration 4s
   animation-timing-function linear
   fill #F9CF68
-  opacity .9
 
 @keyframes empty
   0%
