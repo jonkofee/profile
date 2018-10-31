@@ -38,6 +38,15 @@
 svg
   height 600px
 
+  @media (max-width: 415px)
+    height 550px
+
+  @media (max-width: 376px)
+    height 500px
+
+  @media (max-width: 321px)
+    height 425px
+
 .beer
   animation-name empty
   animation-fill-mode forwards
