@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     currentRouteIsInclude() {
-      return this.pages.includes(this.$route.path)
+      return this.pages.indexOf(this.$route.path) !== -1
     }
   }
 }
